@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <!-- ya vo line h jo css ko use hony nhi dyty h  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4 font-sans">
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+        
+        <!-- YAHAN FORM TAG MISSING THA -->
+        <form id="search-form" class="flex gap-2 mb-6">
+            <input 
+                type="text" 
+                id="city-input" 
+                placeholder="Enter city name..." 
+                class="flex-1 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 text-gray-700 placeholder-gray-400"
+                required
+            >
+            <button 
+                type="submit" 
+                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-colors"
+            >
+                Search
+            </button>
+        </form>
+        
+        <!-- Error line -->
+        <p id="error-message" class="text-red-500 text-center mb-4 hidden text-sm font-medium"></p>
+        
+        <div id="weather-info" class="text-center hidden">
+            <!--Condition -->
+            <h2 id="city-name" class="text-3xl font-bold text-gray-800">Islamabad</h2>
+            <p id="weather-condition" class="text-gray-500 text-lg capitalize mt-1">Clear Sky</p>
+            
+            <!-- temp -->
+            <div class="my-8">
+                <h1 class="text-7xl font-extrabold text-gray-900">
+                    <span id="temp">25</span><span class="text-4xl text-gray-400 font-medium">°C</span>
+                </h1>
+            </div>
+            
+            <div class="flex justify-between bg-blue-50 rounded-xl p-4 mt-6">
+                <div class="flex flex-col items-center">
+                    <span class="text-gray-500 text-sm mb-1">Humidity</span>
+                    <span id="humidity" class="text-xl font-bold text-gray-800">60%</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-gray-500 text-sm mb-1">Wind Speed</span>
+                    <span id="wind-speed" class="text-xl font-bold text-gray-800">5 km/h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+    
+</body>
+</html>
