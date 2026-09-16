@@ -1,69 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard · Pro</title>
-    <!-- Google Font: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- CSS file ko link kar diya -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard · Pro</title>
+  <!-- CSS file ko link kar diya -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Main glass box jisme sab kuch hoga -->
-    <div class="weather-card">
+  <div class="weather-card">
+    <!-- search form -->
+    <form id="search-form" class="search-form">
+      <input type="text" id="city-input" placeholder="Search city..." required>
+      <button type="submit">
+        <span>🔍</span> <span>Search</span>
+      </button>
+    </form>
 
-        <!-- City search karne wala form -->
-        <form id="search-form" class="search-form">
-            <input 
-                type="text" 
-                id="city-input" 
-                placeholder="Search city..." 
-                required
-            >
-            <button type="submit">
-                <i class="fas fa-search"></i> <span>Search</span>
-            </button>
-        </form>
+    <!-- error message -->
+    <p id="error-message" class="error-message hidden"></p>
 
-        <!-- Agar city galat ho toh ye error show hoga -->
-        <p id="error-message" class="error-message hidden"></p>
+    <!-- weather details container -->
+    <div id="weather-info" class="weather-info hidden">
+      <h2 id="city-name">📍 —</h2>
+      <p id="weather-condition">☁️ —</p>
 
-        <!-- Weather ki details yahan aayengi -->
-        <div id="weather-info" class="weather-info hidden">
-            <!-- City ka naam -->
-            <h2 id="city-name">—</h2>
-            <!-- Mausam kaisa hai (Clear, Rainy, etc) -->
-            <p id="weather-condition">—</p>
+      <div class="temp-container">
+        <h1>
+          <span id="temp">—</span><span class="unit">°C</span>
+        </h1>
+      </div>
 
-            <!-- Temperature dikhane ke liye -->
-            <div class="temp-container">
-                <h1>
-                    <span id="temp">—</span><span class="unit">°C</span>
-                </h1>
-            </div>
-
-            <!-- Niche wali details (Humidity aur Hawa) -->
-            <div class="weather-details">
-                <div class="detail-box">
-                    <i class="fas fa-droplet"></i>
-                    <span class="detail-label">Humidity</span>
-                    <span id="humidity" class="detail-value">—</span>
-                </div>
-                <div class="detail-box">
-                    <i class="fas fa-wind"></i>
-                    <span class="detail-label">Wind</span>
-                    <span id="wind-speed" class="detail-value">—</span>
-                </div>
-            </div>
+      <div class="weather-details">
+        <div class="detail-box">
+          <span class="detail-icon">💧</span>
+          <span class="detail-label">Humidity</span>
+          <span id="humidity" class="detail-value">—</span>
         </div>
+        <div class="detail-box">
+          <span class="detail-icon">🌬️</span>
+          <span class="detail-label">Wind</span>
+          <span id="wind-speed" class="detail-value">—</span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- JS file attach kar di -->
-    <script type="module" src="app.js"></script>
+  <!-- JS file attach kar di -->
+  <script src="app.js"></script>
 </body>
 </html>
